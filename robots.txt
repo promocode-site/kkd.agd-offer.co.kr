@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kkd.agd-offer.co.kr/sitemap.xml
