@@ -3,8 +3,15 @@
   "siteName": "kkday 할인쿠폰 코드",
   "baseUrl": "https://kkd.agd-offer.co.kr",
   "postUrlPattern": "/blog/{slug}/",
-  "updated": "2026-09-27",
+  "updated": "2026-09-29",
   "posts": [
+    {
+      "title": "kkday 할인코드로 대만 고속철도(THSR) 할인 받는 법",
+      "slug": "kkday-discount-code-taiwan-hsr",
+      "date": "2026-09-29",
+      "description": "대만 고속철도(THSR) 승차권을 kkday에서 예약할 때 적용할 수 있는 kkday 할인코드와 할인율, 예약 전 확인해야 할 점을 정리해 소개합니다.",
+      "image": ""
+    },
     {
       "title": "KKday 할인쿠폰 코드 입력 방법과 사용 조건 (상품별 안내)",
       "slug": "kkday-discount-code-how-to-apply",
