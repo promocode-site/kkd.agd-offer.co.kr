@@ -152,6 +152,12 @@ body{margin:0;background:#e9ecf1;color:#18202c;font-family:-apple-system,BlinkMa
 .tx-sep{height:30px;background:#e9ecf1;position:relative}
 .tx-sep::before{content:"";position:absolute;left:0;right:0;top:12px;height:6px;background:#2f4e93}
 .tx-sep::after{content:"";position:absolute;left:50%;top:5px;width:20px;height:20px;margin-left:-10px;border-radius:50%;background:#fff;border:5px solid #18202c;box-sizing:border-box}
+.tx-pages{max-width:1120px;margin:0 auto 16px;overflow-x:auto;scrollbar-width:none}
+.tx-pages::-webkit-scrollbar{display:none}
+.tx-pages ul{display:flex;gap:6px;margin:0;padding:0;list-style:none}
+.tx-pages a{display:block;white-space:nowrap;font-size:14px;font-weight:600;color:#d6dce6;text-decoration:none;padding:7px 14px;border-radius:999px;border:1.5px solid #3b4a63}
+.tx-pages a:hover,.tx-pages a:focus-visible{border-color:#f2c300;color:#f2c300}
+.tx-pages a[aria-current="page"]{background:#f2c300;border-color:#f2c300;color:#18202c}
 .tx-foot{background:#18202c;color:#c9d0db;padding:44px 20px 36px;font-size:14px;line-height:1.7}
 .tx-foot-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:28px 40px}
 .tx-foot p{margin:0}
@@ -160,9 +166,12 @@ body{margin:0;background:#e9ecf1;color:#18202c;font-family:-apple-system,BlinkMa
 .tx-foot ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
 .tx-foot a{color:#e3e8f0;text-underline-offset:3px}
 .tx-foot a:hover,.tx-foot a:focus-visible{color:#f2c300}
+.tx-links{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px;border-top:1px solid #3b4a63;padding-top:20px}
+.upd-log-list p{overflow-wrap:anywhere}
+.tx-links ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 16px}
 .tx-end{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:1px solid #3b4a63;padding-top:16px;font-size:13px}
 @media (max-width:900px){.tx-card{grid-template-columns:1fr;padding:34px 24px 32px}.tx-foot-in{grid-template-columns:1fr 1fr}.tx-about{grid-column:1/-1}}
-@media (max-width:760px){.tx-top{padding:24px 16px}.tx-card{padding:30px 18px 30px;border-radius:18px}.tx-chip{top:26px;right:18px;width:44px;height:34px}.tx-card h1{padding-right:56px}.tx-nav-in{padding:8px 16px}.tx-foot{padding:36px 16px 28px}.tx-foot-in{grid-template-columns:1fr}}
+@media (max-width:760px){.tx-top{padding:24px 16px}.tx-card{padding:30px 18px 30px;border-radius:18px}.tx-chip{top:26px;right:18px;width:44px;height:34px}.tx-card h1{padding-right:56px}.tx-nav-in{padding:8px 16px}.tx-foot{padding:36px 16px 28px}.tx-foot-in{grid-template-columns:1fr}.tx-links{grid-template-columns:1fr}.tx-pages{margin-bottom:12px}}
 @media (max-width:380px){.tx-nums dd{font-size:19px}}
 .ic-codes{--ic-bg:#edeff2;--ic-paper:#f8f9fb;--ic-ink:#18202c;--ic-cob:#2f4e93;--ic-steel:#c5ccd6;--ic-pt:#f2c300;--ic-mute:#535d6c;--ic-sans:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;--ic-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--ic-bg);color:var(--ic-ink);font-family:var(--ic-sans);line-height:1.65;word-break:keep-all;scroll-margin-top:72px}
 .ic-codes :where(h2,h3,p,ul,dl,dd,table,caption){margin:0;padding:0}
@@ -287,6 +296,7 @@ body{margin:0;background:#e9ecf1;color:#18202c;font-family:-apple-system,BlinkMa
 .rt-tb tbody tr:last-child th,.rt-tb tbody tr:last-child td{border-bottom:0}
 .rt-tb .rt-when{white-space:nowrap}
 .rt-note{font-size:13px;color:var(--rt-mute);margin-top:14px}
+.rt-more{margin-top:24px}
 @media (max-width:900px){.rt-head{grid-template-columns:1fr}.rt-card{grid-template-columns:1fr}}
 @media (max-width:760px){
 .rt-wrap{padding:40px 16px 48px}
@@ -478,6 +488,12 @@ body{margin:0;background:#e9ecf1;color:#18202c;font-family:-apple-system,BlinkMa
 <a class="tx-skip" href="#main">본문 바로가기</a>
 <!-- ===== 헤더 ===== -->
 <header class="tx-top">
+<nav class="tx-pages" aria-label="사이트 페이지">
+<ul>
+<li><a href="./" aria-current="page">홈</a></li>
+<li><a href="discount-coupon/">kkday 할인쿠폰</a></li>
+</ul>
+</nav>
 <div class="tx-card" data-no="KKD 0047">
 <span class="tx-chip" aria-hidden="true"></span>
 <h1>KKday 할인코드·쿠폰</h1>
@@ -828,6 +844,7 @@ body{margin:0;background:#e9ecf1;color:#18202c;font-family:-apple-system,BlinkMa
 <tr><th scope="row"><a href="#coupons-referral">KKday 친구 초대 포인트</a></th><td data-label="받는 시점"><span class="rt-when rt-after">이용 후 적립</span></td><td data-label="받는 곳"><span>친구 초대</span></td><td data-label="혜택"><span>포인트</span></td><td data-label="기간"><span>기간 미표기</span></td></tr>
 </tbody></table></div>
 <p class="rt-note">계산에 쓴 상품 요금은 할인 구조를 보여주기 위한 예시 금액이며, 실제 요금은 날짜와 옵션에 따라 다릅니다.</p>
+<p class="rt-more"><a class="rt-cta" href="discount-coupon/">kkday 할인쿠폰 전체 보기</a></p>
 </div>
 </section>
 <div class="tx-sep" aria-hidden="true"></div>
@@ -1144,6 +1161,34 @@ body{margin:0;background:#e9ecf1;color:#18202c;font-family:-apple-system,BlinkMa
 <li><a href="https://fft.trip-offer.co.kr/" target="_blank" rel="noopener">파페치 쿠폰</a></li>
 </ul>
 </div>
+<!--@FOOTER-LINKS-->
+<div class="tx-links">
+<div>
+<p class="tx-col-t">카드사별 할인</p>
+<ul>
+<li><a href="hyundai-card/">현대카드</a></li>
+<li><a href="shinhan-card/">신한카드</a></li>
+<li><a href="woori-card/">우리카드</a></li>
+<li><a href="nh-card/">NH농협카드</a></li>
+<li><a href="payco-pay/">페이코</a></li>
+<li><a href="master-card/">마스터카드</a></li>
+<li><a href="visa-card/">비자카드</a></li>
+</ul>
+</div>
+<div>
+<p class="tx-col-t">다른 할인코드</p>
+<ul>
+<li><a href="tripcom/">트립닷컴 할인코드</a></li>
+<li><a href="agoda/">아고다 할인코드</a></li>
+<li><a href="klook/">클룩 할인코드</a></li>
+<li><a href="myrealtrip/">마이리얼트립 할인코드</a></li>
+<li><a href="hotelscom/">호텔스닷컴 할인코드</a></li>
+<li><a href="usimsa/">유심사 할인코드</a></li>
+<li><a href="rakutentravel/">라쿠텐트래블 할인코드</a></li>
+</ul>
+</div>
+</div>
+<!--@/FOOTER-LINKS-->
 <p class="tx-end"><span>KKday 고객센터 1688-4110</span><a href="#top">처음으로</a></p>
 </div>
 </footer>
